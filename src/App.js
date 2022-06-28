@@ -12,12 +12,36 @@ function App() {
               <Draggable draggableId="item0" index={0}>
                 {(provided) => (
                   <div
-                  className="item"
+                    className="item"
                     {...provided.draggableProps}
                     ref={provided.innerRef}
                     {...provided.dragHandleProps}
                   >
                     item0
+                  </div>
+                )}
+              </Draggable>
+              <Draggable draggableId="item1" index={1}>
+                {(provided) => (
+                  <div
+                    className="item"
+                    {...provided.draggableProps}
+                    ref={provided.innerRef}
+                    {...provided.dragHandleProps}
+                  >
+                    item1
+                  </div>
+                )}
+              </Draggable>
+              <Draggable draggableId="item2" index={2}>
+                {(provided) => (
+                  <div
+                    className="item"
+                    {...provided.draggableProps}
+                    ref={provided.innerRef}
+                    {...provided.dragHandleProps}
+                  >
+                    item2
                   </div>
                 )}
               </Draggable>

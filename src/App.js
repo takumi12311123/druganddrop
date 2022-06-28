@@ -1,23 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="dragDropArea">
+      <DragDropContext>
+        <Droppable droppableId="droppable">
+          {(provided) => (
+            <div {...provided.droppableProps} ref={provided.innerRef}>
+              <Draggable draggableId="item0" index={0}>
+                {(provided) => (
+                  <div
+                  className="item"
+                    {...provided.draggableProps}
+                    ref={provided.innerRef}
+                    {...provided.dragHandleProps}
+                  >
+                    item0
+                  </div>
+                )}
+              </Draggable>
+            </div>
+          )}
+        </Droppable>
+      </DragDropContext>
     </div>
   );
 }
